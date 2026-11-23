@@ -114,7 +114,7 @@ ament_target_dependencies(你的目标 rclcpp training_interfaces)
 colcon build --symlink-install
 ```
 
-## Git / CI
+## Git
 
 **push 被拒绝，提示 protected branch**
 
@@ -125,12 +125,6 @@ git checkout dev
 git pull origin dev
 git checkout -b task/01-nodes-topics
 ```
-
-**CI 失败但本地通过**
-
-- 本地是否漏 source？
-- 是否提交了未跟踪的新文件（`git status`）
-- CI 用的是干净环境，确认 `package.xml` 依赖写全
 
 **PR 里有 build/install/log**
 

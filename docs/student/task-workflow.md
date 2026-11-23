@@ -23,7 +23,6 @@
   → clang-format + sanitizer
   → 自查
   → 提 PR（附命令输出）
-  → CI 绿
   → 审查 / 修改
   → squash merge
   → 删除分支
@@ -63,7 +62,7 @@ task-01: 增加阈值告警
 - 改动 diff 自查：没有调试残留、没有注释掉的代码
 
 ```bash
-# 格式检查（与 CI 一致）
+# 格式检查（提交前自检）
 git ls-files -z '*.cpp' '*.hpp' '*.h' | xargs -0 -r clang-format --dry-run --Werror
 ```
 
@@ -79,14 +78,7 @@ git ls-files -z '*.cpp' '*.hpp' '*.h' | xargs -0 -r clang-format --dry-run --Wer
 - PR 模板里的自检清单全部勾选
 - 仍未解决的问题（没有就写「无」）
 
-## 6. CI 失败怎么办
-
-1. 点开失败 job，只读第一条错误
-2. 本地复现同一条命令
-3. 修完 push，CI 自动重跑
-4. 连续两次修不好，在 PR 里贴错误和已尝试的命令，@ 导师
-
-## 7. 卡住时怎么问
+## 6. 卡住时怎么问
 
 在 Issue/PR 评论里给三样东西：
 
@@ -99,17 +91,17 @@ git ls-files -z '*.cpp' '*.hpp' '*.h' | xargs -0 -r clang-format --dry-run --Wer
 
 只发「跑不起来」会被要求补信息。
 
-## 8. 审查与合并
+## 7. 审查与合并
 
 - 审查意见分 `must-fix` / `should-fix` / `nit` / `question`
 - `must-fix` 改完回复「已修改 + 新 commit」，不要 force push 覆盖审查历史
 - PR 合入 `dev`；通过后由导师 squash merge，你删除远程分支
 - `main` 由导师定期从 `dev` 合并，不需要你操作
 - 前两个 PR 建议和导师共享屏幕过一遍
+- 导师会随机抽一条验收命令复跑，不要只在本机「口头通过」
 
-## 9. 什么情况不能合并
+## 8. 什么情况不能合并
 
-- CI 红
 - 构建有 warning
 - 验收命令没跑或输出对不上
 - 改了任务文档里禁止修改的文件（`CMakeLists.txt` / `package.xml`，任务特别说明除外）

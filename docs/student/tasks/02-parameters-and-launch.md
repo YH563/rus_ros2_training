@@ -104,7 +104,7 @@ ros2 param dump /sensor_a/sensor
 ## 8. 完成定义（DoD）
 
 - 验收命令逐条跑过，输出贴在 PR
-- CI 绿
+- 验收命令本地通过（导师会抽查复跑）
 - 无 `must-fix` 遗留
 - 能解释：参数、launch、namespace 各自解决什么问题
 

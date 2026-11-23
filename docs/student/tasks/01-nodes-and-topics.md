@@ -112,7 +112,7 @@ ros2 run training_pubsub temperature_subscriber
 ## 9. 完成定义（DoD）
 
 - 验收命令逐条跑过，输出贴在 PR
-- CI 绿
+- 验收命令本地通过（导师会抽查复跑）
 - 无 `must-fix` 遗留
 - 能口头说清：谁发布、谁订阅、数据从哪个进程到哪个进程
 

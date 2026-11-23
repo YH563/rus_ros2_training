@@ -84,7 +84,7 @@ ros2 service call /monitor/reset_stats std_srvs/srv/Empty
 ## 8. 完成定义（DoD）
 
 - 验收命令逐条跑过，输出贴在 PR
-- CI 绿
+- 验收命令本地通过（导师会抽查复跑）
 - 无 `must-fix` 遗留
 - 能解释：为什么旁路进程比直接改主链路更安全
 

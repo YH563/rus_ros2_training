@@ -69,4 +69,4 @@ body:
   - type: markdown
     attributes:
       value: |
-        **完成定义**：验收命令逐条跑过、PR 贴出关键输出、CI 绿、无 `must-fix` 遗留。
+        **完成定义**：验收命令逐条跑过、PR 贴出关键输出、导师审查通过、无 `must-fix` 遗留。

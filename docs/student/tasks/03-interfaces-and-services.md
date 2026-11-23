@@ -126,7 +126,7 @@ ros2 service call /reset_counter training_interfaces/srv/ResetCounter "{sensor_i
 ## 8. 完成定义（DoD）
 
 - 验收命令逐条跑过，输出贴在 PR
-- CI 绿
+- 验收命令本地通过（导师会抽查复跑）
 - 无 `must-fix` 遗留
 - 能解释：为什么接口要单独成包、改字段后为什么要先构建接口包
 

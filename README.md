@@ -6,7 +6,7 @@ ROS 2 Humble + C++17 入门训练仓库。目标不是「学完 ROS 2」，而�
 - 仓库根目录就是 colcon 工作区：`clone` 后直接 `colcon build`
 - 三个必修模块：节点与话题 → 参数与 launch → 自定义 msg/srv
 - 一个可选模块：旁路监控进程（为进入 `RUS_Engine` 做准备）
-- **不提供参考答案**：任务用 Issue 发布，靠自测命令、CI 和代码审查推进
+- **不提供参考答案**：任务用 Issue 发布，靠自测命令和代码审查推进
 
 完整文档目录与阅读顺序见 [`docs/student/README.md`](docs/student/README.md)。
 
@@ -57,8 +57,10 @@ ros2 run training_pubsub temperature_publisher
 1. 在 GitHub Issue 里认领任务（一个任务一个 Issue）
 2. 从最新 `dev` 开分支：`task/01-nodes-topics`
 3. 实现 `TODO`，按任务文档的验收命令逐条自测
-4. 提交 PR 到 `dev`，贴上关键命令输出；CI 必须绿
+4. 提交 PR 到 `dev`，贴上关键命令输出
 5. 代码审查通过后 squash merge 到 `dev`；导师定期把 `dev` 合并到 `main`
+
+验收以任务文档里的命令为准，导师会抽查复跑。
 
 详细规则见 [`docs/student/task-workflow.md`](docs/student/task-workflow.md)。
 
@@ -83,7 +85,7 @@ rus_ros2_training/
 │   ├── training_interfaces/
 │   ├── training_sensor/   # M3
 │   └── training_capstone/ # M4（可选）
-└── .github/               # Issue / PR 模板、CI
+└── .github/               # Issue / PR 模板
 ```
 
 ## 关于「没有答案」

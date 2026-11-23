@@ -57,7 +57,7 @@ source install/setup.bash
 # 格式化自己改的文件
 clang-format -i src/training_pubsub/src/*.cpp
 
-# 只检查，不改文件（CI 用的就是这条）
+# 只检查，不改文件
 git ls-files -z '*.cpp' '*.hpp' '*.h' | xargs -0 -r clang-format --dry-run --Werror
 ```
 

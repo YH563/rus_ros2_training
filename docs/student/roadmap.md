@@ -11,7 +11,7 @@
 - 用参数和 launch 改变行为而不重编译
 - 定义 msg/srv，理解接口包为什么独立、依赖方向为什么重要
 - 用 `ros2 node/topic/service/param/interface` 命令定位常见问题
-- 按 Issue → 分支 → 自测 → PR → CI → 审查 的流程交付代码
+- 按 Issue → 分支 → 自测 → PR → 审查 的流程交付代码
 
 ## 2. 课程安排
 
