@@ -118,9 +118,11 @@ colcon build --symlink-install
 
 **push 被拒绝，提示 protected branch**
 
-`main` 不能直接 push。开分支、提 PR：
+`dev` / `main` 不能直接 push。从最新 `dev` 开任务分支，PR 合回 `dev`：
 
 ```bash
+git checkout dev
+git pull origin dev
 git checkout -b task/01-nodes-topics
 ```
 

@@ -8,15 +8,15 @@
 - [ ] 环境可用：`colcon build` 能通过，`source install/setup.bash` 后 `ros2 run` 正常
 - [ ] 已读对应任务文档
 - [ ] 已认领 Issue（导师 assign 给你）
-- [ ] `main` 是最新的
+- [ ] `dev` 是最新的
 
-`main` 分支受保护，不能直接 push，只能通过 PR 合入。
+`dev` 是日常任务分支；`main` 由导师维护，不要直接往 `main` 提 PR 或 push。
 
 ## 2. 流程总览
 
 ```text
 认领 Issue
-  → 同步 main
+  → 同步 dev
   → 开分支
   → 实现 TODO
   → colcon build + 跑验收命令
@@ -29,11 +29,11 @@
   → 删除分支
 ```
 
-## 3. 同步 main、开分支、提交
+## 3. 同步 dev、开分支、提交
 
 ```bash
-git checkout main
-git pull origin main
+git checkout dev
+git pull origin dev
 
 git checkout -b task/01-nodes-topics
 ```
@@ -72,6 +72,7 @@ git ls-files -z '*.cpp' '*.hpp' '*.h' | xargs -0 -r clang-format --dry-run --Wer
 ## 5. PR 描述
 
 - 关联 Issue：`Closes #12`
+- 目标分支：`dev`
 - 改了什么（3 行以内）
 - 数据流：谁发布 → 哪个话题/服务 → 谁订阅/调用
 - 自测命令与输出
@@ -102,7 +103,8 @@ git ls-files -z '*.cpp' '*.hpp' '*.h' | xargs -0 -r clang-format --dry-run --Wer
 
 - 审查意见分 `must-fix` / `should-fix` / `nit` / `question`
 - `must-fix` 改完回复「已修改 + 新 commit」，不要 force push 覆盖审查历史
-- 通过后由导师 squash merge，你删除远程分支
+- PR 合入 `dev`；通过后由导师 squash merge，你删除远程分支
+- `main` 由导师定期从 `dev` 合并，不需要你操作
 - 前两个 PR 建议和导师共享屏幕过一遍
 
 ## 9. 什么情况不能合并

@@ -14,7 +14,7 @@ ROS 2 Humble + C++17 入门训练仓库。目标不是「学完 ROS 2」，而�
 
 - Ubuntu 22.04 + ROS 2 Humble
 - `g++` / `cmake` / `colcon` / `clang-format`
-- 能读写本仓库的 GitHub 权限；`main` 分支受保护，只能通过 PR 合入
+- 能读写本仓库的 GitHub 权限；仓库默认分支是 `dev`，`main` 由导师维护
 
 环境安装与验证见 [`docs/student/environment.md`](docs/student/environment.md)。
 
@@ -55,10 +55,10 @@ ros2 run training_pubsub temperature_publisher
 ## 工作方式
 
 1. 在 GitHub Issue 里认领任务（一个任务一个 Issue）
-2. 从最新 `main` 开分支：`task/01-nodes-topics`
+2. 从最新 `dev` 开分支：`task/01-nodes-topics`
 3. 实现 `TODO`，按任务文档的验收命令逐条自测
-4. 提交 PR，贴上关键命令输出；CI 必须绿
-5. 代码审查通过后 squash merge
+4. 提交 PR 到 `dev`，贴上关键命令输出；CI 必须绿
+5. 代码审查通过后 squash merge 到 `dev`；导师定期把 `dev` 合并到 `main`
 
 详细规则见 [`docs/student/task-workflow.md`](docs/student/task-workflow.md)。
 
