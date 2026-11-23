@@ -1,0 +1,72 @@
+name: 训练任务
+description: 发布一个训练任务（导师用）
+title: "[Task XX] "
+labels: ["task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        一个 Issue 只对应一个任务、一个 PR。任务正文以 `docs/student/tasks/` 下的文档为准。
+  - type: dropdown
+    id: module
+    attributes:
+      label: 模块
+      options:
+        - M1 节点与话题
+        - M2 参数与 launch
+        - M3 自定义 msg/srv 与服务
+        - M4 旁路监控（可选）
+    validations:
+      required: true
+  - type: input
+    id: doc
+    attributes:
+      label: 任务文档
+      description: 填写 docs/student/tasks/ 下的文件名
+      placeholder: docs/student/tasks/01-nodes-and-topics.md
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: 目标
+      description: 这个任务完成后应该能做到什么
+      placeholder: 用两个进程通过一条话题通信……
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收命令
+      description: 复制任务文档里的命令，一行一条
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: 约束
+      value: |
+        - 只改任务文档允许修改的文件
+        - 构建 0 warning，clang-format 干净
+        - 一次 PR 只做这一课
+    validations:
+      required: true
+  - type: textarea
+    id: hints
+    attributes:
+      label: 提示
+      description: 只放提示 1 和提示 2；提示 3 留在 review 评论里
+    validations:
+      required: false
+  - type: input
+    id: branch
+    attributes:
+      label: 分支名
+      placeholder: task/01-nodes-topics
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        **完成定义**：验收命令逐条跑过、PR 贴出关键输出、CI 绿、无 `must-fix` 遗留。

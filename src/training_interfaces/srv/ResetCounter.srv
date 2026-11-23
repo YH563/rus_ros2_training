@@ -1,0 +1,7 @@
+# TODO(task-03): 按任务文档填写请求/响应字段，写完删除占位字段。
+# 请求：string sensor_id
+# 响应：bool success
+#       uint64 reset_count
+bool placeholder
+---
+bool ok

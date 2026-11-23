@@ -1,0 +1,5 @@
+sensor:
+  ros__parameters:
+    sensor_id: "sensor_a"
+    publish_rate_hz: 2.0
+    alarm_threshold: 30.0
